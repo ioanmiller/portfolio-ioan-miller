@@ -1,6 +1,7 @@
 const posts = [
   {
-    title: 'Why constant-time comparison actually matters',
+    title:
+      'Gain an extensive understanding of AI and how it will be used currently and, in the future, and if it will help industry — Dissertation',
     date: '2025',
     href: '#',
   },
