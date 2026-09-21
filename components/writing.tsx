@@ -11,7 +11,7 @@ const posts = [
     href: '#',
   },
   {
-    title: 'Notes on threat modeling for small teams',
+    title: 'Ethical Hacking',
     date: '2024',
     href: '#',
   },
