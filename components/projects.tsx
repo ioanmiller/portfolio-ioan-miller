@@ -49,7 +49,7 @@ export function Projects() {
         id="projects-heading"
         className="font-mono text-xs font-medium uppercase tracking-widest text-muted-foreground"
       >
-        Featured Projects
+        Featured Academic / Homelabs Projects
       </h2>
       <ul className="mt-6 flex flex-col gap-8">
         {projects.map((project) => (
