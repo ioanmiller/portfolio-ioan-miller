@@ -27,18 +27,18 @@ const projects = [
     },
   },
   {
-    name: 'PhishNet',
+    name: 'Caravan Website Backend',
     description:
-      'An ML classifier that scores inbound emails for phishing indicators.',
-    outcome: '96% precision on a held-out set; deployed as a browser extension.',
+      'The caravan business had a front-end site but no backend to actually make it work. I contributed to building it, working across HTML, PHP, and C++ to get the core logic running.',
+    outcome:
+      'A functioning backend, built across three languages, that turned static pages into something the business could actually use.',
     href: '#',
-  },
-  {
-    name: 'KeyForge',
-    description:
-      'A hardware-backed password manager built on a Raspberry Pi and a TPM.',
-    outcome: 'Final-year dissertation project graded at 82 (first class).',
-    href: '#',
+    image: {
+      src: '/projects/caravan-backend.png',
+      alt: 'Architecture diagram of the Caravan Business Platform, showing a client layer with the customer browser and HTML/CSS front-end, a PHP application layer with the web server and application modules, a C++ core logic layer with a CLI bridge and business engine, and a data and operations layer with a relational database, file store, and staff admin.',
+      caption:
+        'The diagram shows the three-language backend architecture (HTML / PHP / C++).',
+    },
   },
 ]
 
