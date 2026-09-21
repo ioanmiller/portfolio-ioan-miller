@@ -1,5 +1,18 @@
 const projects = [
   {
+    name: 'AI Governance Framework (Concept)',
+    description:
+      "Businesses are adopting AI faster than they can govern it responsibly, leaving them exposed to unethical use, opaque decision-making, and threats they're not set up to catch. In my third-year dissertation, I designed a concept framework mapping out the concrete steps a business needs to take to govern its AI systems, from initial risk assessment through to catching threats as they emerge. It's built around three core risk areas — ethical misuse, lack of transparency, and threat detection.",
+    outcome:
+      'Gives businesses a practical starting point instead of a blank page.',
+    href: '#',
+    image: {
+      src: '/projects/ai-governance-framework.png',
+      alt: 'Architecture diagram of the U.S. AI Governance Framework Case Study Explorer, showing identified gaps in AI oversight, proposed governance oversight, three risk tiers with illustrative case studies, and a selected case study detail view.',
+      caption: 'The diagram shows the architecture of the case finder.',
+    },
+  },
+  {
     name: 'Sentinel',
     description:
       'A static-analysis tool that flags insecure crypto usage in Python codebases.',
@@ -49,6 +62,19 @@ export function Projects() {
                 {project.outcome}
               </p>
             </a>
+            {project.image ? (
+              <figure className="mt-4">
+                <img
+                  src={project.image.src || '/placeholder.svg'}
+                  alt={project.image.alt}
+                  className="w-full rounded-md border border-border"
+                  loading="lazy"
+                />
+                <figcaption className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                  {project.image.caption}
+                </figcaption>
+              </figure>
+            ) : null}
           </li>
         ))}
       </ul>

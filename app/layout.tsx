@@ -10,9 +10,9 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Jordan Ellis — Computer Security',
+  title: 'Ioan Miller — Computer Security',
   description:
-    'Portfolio of Jordan Ellis, a Computer Security student. Featured projects, writing, and contact.',
+    'Portfolio of Ioan Miller, a Computer Security graduate. Featured projects, writing, and contact.',
   generator: 'v0.app',
   icons: {
     icon: [
