@@ -6,7 +6,7 @@ const posts = [
     href: '#',
   },
   {
-    title: 'Reversing a firmware update: a beginner walkthrough',
+    title: 'Network and Security — Packet Tracer',
     date: '2024',
     href: '#',
   },
