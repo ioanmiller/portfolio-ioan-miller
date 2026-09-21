@@ -13,12 +13,18 @@ const projects = [
     },
   },
   {
-    name: 'Sentinel',
+    name: 'SOC Analyst SIEM Lab',
     description:
-      'A static-analysis tool that flags insecure crypto usage in Python codebases.',
+      "Used a Wazuh manager to deploy a Wazuh agent to a monitored endpoint. The agent connects back to the manager, and I configured File Integrity Monitoring by editing the agent's config file so changes to chosen directories are logged.",
     outcome:
-      'Scanned 40+ open-source repos and surfaced 120 real misconfigurations.',
+      'Alerts surface on the Wazuh dashboard, showing a working end-to-end detection pipeline.',
     href: '#',
+    image: {
+      src: '/projects/soc-siem-lab.png',
+      alt: 'Wazuh SIEM dashboard showing File Integrity Monitoring for a Windows endpoint, with donut charts for most active users, actions, and files added, modified, and deleted, plus a Wazuh agent window confirming the agent is running and connected to the manager.',
+      caption:
+        'The Wazuh dashboard showing File Integrity Monitoring alerts from the monitored endpoint.',
+    },
   },
   {
     name: 'PhishNet',
