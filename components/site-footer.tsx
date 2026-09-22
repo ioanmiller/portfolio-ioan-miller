@@ -4,15 +4,15 @@ export function SiteFooter() {
       <ul className="flex flex-col gap-2 font-mono text-sm sm:flex-row sm:gap-6">
         <li>
           <a
-            href="mailto:jordan@ellis.dev"
+            href="mailto:ioanmiller2005@gmail.com"
             className="text-muted-foreground underline decoration-border underline-offset-4 hover:text-foreground hover:decoration-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4 focus-visible:ring-offset-background"
           >
-            jordan@ellis.dev
+            Ioanmiller2005@gmail.com
           </a>
         </li>
         <li>
           <a
-            href="https://www.linkedin.com/"
+            href="http://www.linkedin.com/in/ioan-miller-7b5913294"
             target="_blank"
             rel="noreferrer"
             className="text-muted-foreground underline decoration-border underline-offset-4 hover:text-foreground hover:decoration-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4 focus-visible:ring-offset-background"

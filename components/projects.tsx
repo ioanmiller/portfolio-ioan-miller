@@ -5,7 +5,7 @@ const projects = [
       "Businesses are adopting AI faster than they can govern it responsibly, leaving them exposed to unethical use, opaque decision-making, and threats they're not set up to catch. In my third-year dissertation, I designed a concept framework mapping out the concrete steps a business needs to take to govern its AI systems, from initial risk assessment through to catching threats as they emerge. It's built around three core risk areas — ethical misuse, lack of transparency, and threat detection.",
     outcome:
       'Gives businesses a practical starting point instead of a blank page.',
-    href: '#',
+    href: 'https://docs.google.com/document/d/1sdQ7Ing9rS5LmVXnE6ZgwTaw6_1L3bBq/edit?usp=sharing&ouid=117032266366284758779&rtpof=true&sd=true',
     image: {
       src: '/projects/ai-governance-framework.png',
       alt: 'Architecture diagram of the U.S. AI Governance Framework Case Study Explorer, showing identified gaps in AI oversight, proposed governance oversight, three risk tiers with illustrative case studies, and a selected case study detail view.',
@@ -32,12 +32,27 @@ const projects = [
       'The caravan business had a front-end site but no backend to actually make it work. I contributed to building it, working across HTML, PHP, and C++ to get the core logic running.',
     outcome:
       'A functioning backend, built across three languages, that turned static pages into something the business could actually use.',
-    href: '#',
+    href: 'https://drive.google.com/file/d/1J73TE2LkE9jtf-JGiKGwuqc5H26_h6sZ/view?usp=sharing',
+    githubHref: 'https://github.com/ioanmiller/Caravan-Website',
     image: {
       src: '/projects/caravan-backend.png',
       alt: 'Architecture diagram of the Caravan Business Platform, showing a client layer with the customer browser and HTML/CSS front-end, a PHP application layer with the web server and application modules, a C++ core logic layer with a CLI bridge and business engine, and a data and operations layer with a relational database, file store, and staff admin.',
       caption:
         'The diagram shows the three-language backend architecture (HTML / PHP / C++).',
+    },
+  },
+  {
+    name: 'Wireless Sensor Network Simulator',
+    description:
+      "This project uses Cooja, a Java-based wireless sensor network simulator, to model an IoT environment consisting of a sink node acting as an MQTT broker and multiple sensor nodes — including temperature sensors and motion detectors functioning as publishers and subscribers. The objective is to configure and verify MQTT communication across the simulated network, then capture traffic using Cooja's packet sniffer and export it to Wireshark. The analysis identifies security vulnerabilities such as plaintext data transmission, missing authentication, and unencrypted TCP communication.",
+    outcome:
+      'A simulated MQTT network with captured traffic and documented security findings.',
+    href: 'https://docs.google.com/document/d/1ERb3cw8JCvs9r8-WRJ7GWLvlo8WNdP3I/edit?usp=sharing&ouid=117032266366284758779&rtpof=true&sd=true',
+    image: {
+      src: '/projects/wireless-sensor-network-simulator.png',
+      alt: 'Cooja wireless sensor network simulation and security analysis workflow showing MQTT communication between sensor nodes and a sink node, packet capture, Wireshark inspection, and identified security vulnerabilities.',
+      caption:
+        'The diagram shows the Cooja MQTT simulation, packet capture workflow, and security findings.',
     },
   },
 ]
@@ -56,6 +71,8 @@ export function Projects() {
           <li key={project.name}>
             <a
               href={project.href}
+              target={project.href.startsWith('http') ? '_blank' : undefined}
+              rel={project.href.startsWith('http') ? 'noreferrer' : undefined}
               className="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4 focus-visible:ring-offset-background"
             >
               <h3 className="font-mono text-sm font-medium text-foreground underline decoration-border underline-offset-4 group-hover:decoration-foreground">
@@ -68,14 +85,32 @@ export function Projects() {
                 {project.outcome}
               </p>
             </a>
+            {project.githubHref ? (
+              <a
+                href={project.githubHref}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-2 inline-block text-xs text-muted-foreground underline decoration-border underline-offset-4 hover:text-foreground hover:decoration-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4 focus-visible:ring-offset-background"
+              >
+                View the GitHub repository
+              </a>
+            ) : null}
             {project.image ? (
               <figure className="mt-4">
-                <img
-                  src={project.image.src || '/placeholder.svg'}
-                  alt={project.image.alt}
-                  className="w-full rounded-md border border-border"
-                  loading="lazy"
-                />
+                <a
+                  href={project.image.src || '/placeholder.svg'}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`Open ${project.name} image in a new tab`}
+                  className="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4 focus-visible:ring-offset-background"
+                >
+                  <img
+                    src={project.image.src || '/placeholder.svg'}
+                    alt={project.image.alt}
+                    className="w-full rounded-md border border-border group-hover:opacity-90"
+                    loading="lazy"
+                  />
+                </a>
                 <figcaption className="mt-2 text-xs leading-relaxed text-muted-foreground">
                   {project.image.caption}
                 </figcaption>
