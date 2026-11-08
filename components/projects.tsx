@@ -1,4 +1,18 @@
-const projects = [
+type Project = {
+  name: string
+  description: string
+  outcome: string
+  href: string
+  githubHref?: string
+  embeddedPdf?: string
+  image?: {
+    src: string
+    alt: string
+    caption: string
+  }
+}
+
+const projects: Project[] = [
   {
     name: 'AI Governance Framework (Concept)',
     description:
@@ -25,6 +39,15 @@ const projects = [
       caption:
         'The Wazuh dashboard showing File Integrity Monitoring alerts from the monitored endpoint.',
     },
+  },
+  {
+    name: 'The Golden Invoice — Tier 1 SOC Analyst Case Study',
+    description:
+      'Completed with Amdari, this simulated Tier 1 SOC Analyst case study documents my investigation of The Golden Invoice and the findings in my SOC report.',
+    outcome:
+      'A case-study report demonstrating a structured Tier 1 SOC investigation.',
+    href: '/projects/golden-invoice-soc-report.pdf',
+    embeddedPdf: '/projects/golden-invoice-soc-report.pdf',
   },
   {
     name: 'Caravan Website Backend',
@@ -71,8 +94,16 @@ export function Projects() {
           <li key={project.name}>
             <a
               href={project.href}
-              target={project.href.startsWith('http') ? '_blank' : undefined}
-              rel={project.href.startsWith('http') ? 'noreferrer' : undefined}
+              target={
+                project.href.startsWith('http') || project.href.endsWith('.pdf')
+                  ? '_blank'
+                  : undefined
+              }
+              rel={
+                project.href.startsWith('http') || project.href.endsWith('.pdf')
+                  ? 'noreferrer'
+                  : undefined
+              }
               className="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4 focus-visible:ring-offset-background"
             >
               <h3 className="font-mono text-sm font-medium text-foreground underline decoration-border underline-offset-4 group-hover:decoration-foreground">
@@ -113,6 +144,30 @@ export function Projects() {
                 </a>
                 <figcaption className="mt-2 text-xs leading-relaxed text-muted-foreground">
                   {project.image.caption}
+                </figcaption>
+              </figure>
+            ) : null}
+            {project.embeddedPdf ? (
+              <figure className="relative left-1/2 mt-4 w-[min(90vw,960px)] -translate-x-1/2">
+                <iframe
+                  src={project.embeddedPdf}
+                  title={`${project.name} report`}
+                  className="h-[85vh] min-h-[640px] w-full rounded-md border border-border"
+                  loading="lazy"
+                >
+                  <a href={project.embeddedPdf}>Open the SOC report</a>
+                </iframe>
+                <figcaption className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                  Read the case study report here, or{' '}
+                  <a
+                    href={project.embeddedPdf}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="underline decoration-border underline-offset-4 hover:text-foreground hover:decoration-foreground"
+                  >
+                    open it in a new tab
+                  </a>
+                  .
                 </figcaption>
               </figure>
             ) : null}
