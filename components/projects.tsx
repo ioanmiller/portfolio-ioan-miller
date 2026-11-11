@@ -20,6 +20,7 @@ const projects: Project[] = [
     outcome:
       'Gives businesses a practical starting point instead of a blank page.',
     href: 'https://docs.google.com/document/d/1sdQ7Ing9rS5LmVXnE6ZgwTaw6_1L3bBq/edit?usp=sharing&ouid=117032266366284758779&rtpof=true&sd=true',
+    embeddedPdf: '/projects/ai-governance-framework-report.pdf',
     image: {
       src: '/projects/ai-governance-framework.png',
       alt: 'Architecture diagram of the U.S. AI Governance Framework Case Study Explorer, showing identified gaps in AI oversight, proposed governance oversight, three risk tiers with illustrative case studies, and a selected case study detail view.',
